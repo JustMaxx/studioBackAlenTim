@@ -10,6 +10,18 @@ const Orders = db.define(
       primaryKey: true,
       allowNull: false,
     },
+    firstName:{
+      type: Sequelize.STRING,
+      allowNull:true,
+    },
+    lastName:{
+      type: Sequelize.STRING,
+      allowNull:true,
+    },
+    number:{
+      type: Sequelize.STRING,
+      allowNull:true,
+    },
     status: {
       type: Sequelize.INTEGER,
       allowNull: true,
@@ -34,10 +46,6 @@ const Orders = db.define(
     },
     pathSketch: {
       type: Sequelize.ARRAY(Sequelize.STRING),
-      allowNull: true,
-    },
-    idSewindDate: {
-      type: Sequelize.INTEGER,
       allowNull: true,
     },
     measurements:{

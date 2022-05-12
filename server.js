@@ -2,10 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const db = require("./db/dbConfig");
-const user = require("./routes/userRoute");
-const orders = require("./routes/ordersRoute");
-const optionsCheckboxRouter = require("./routes/optionsCheckboxRouter");
-const roleRouter = require("./routes/roleRouter");
 const app = express();
 
 let corsOptions = {
@@ -20,8 +16,6 @@ require("./routes/user.routes")(app);
 require("./routes/order.routes")(app);
 require("./routes/sewind.routes")(app);
 
-app.use("/optionsCheckboxRouter", optionsCheckboxRouter);
-app.use("/roleRouter", roleRouter);
 
 db.sync(); // синхронихация с БД
 app.get("/", async (req, res) => {

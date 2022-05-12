@@ -2,6 +2,17 @@ const Sequelize = require("sequelize");
 const db = require("../db/dbConfig");
 const Orders = require("./Orders");
 
+// Sketch
+//  measurements
+//  materials
+//  Pattern
+//  cutting
+//  painting
+//  Applications
+//  Rhinestones
+//  Sewing
+//  Payment
+
 const optionsCheckbox = db.define(
   "optionsCheckbox",
   {
@@ -11,12 +22,12 @@ const optionsCheckbox = db.define(
       primaryKey: true,
       allowNull: false,
     },
-    status: {
+    sketch: {
       type: Sequelize.BOOLEAN,
       allowNull: false,
       defaultValue: false,
     },
-    sizes: {
+    measurement: {
       type: Sequelize.BOOLEAN,
       allowNull: false,
       defaultValue: false,
@@ -31,7 +42,17 @@ const optionsCheckbox = db.define(
       allowNull: false,
       defaultValue: false,
     },
-    applique: {
+    cutting: {
+      type: Sequelize.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
+    painting: {
+      type: Sequelize.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
+    applications: {
       type: Sequelize.BOOLEAN,
       allowNull: false,
       defaultValue: false,
@@ -42,6 +63,11 @@ const optionsCheckbox = db.define(
       defaultValue: false,
     },
     sewing: {
+      type: Sequelize.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
+    payment: {
       type: Sequelize.BOOLEAN,
       allowNull: false,
       defaultValue: false,
